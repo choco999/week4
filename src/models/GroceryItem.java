@@ -1,3 +1,5 @@
+package models;
+
 import java.util.Arrays;
 import java.util.List;
 
@@ -30,7 +32,8 @@ public class GroceryItem {
     public void setPrice(double price) {
         if(price>=0 && price <=150)
             this.price = price;
-        throw new IllegalArgumentException("price must be 0-150 inclusive");
+        else
+            throw new IllegalArgumentException("price must be 0-150 inclusive");
 
     }
 
@@ -39,7 +42,7 @@ public class GroceryItem {
     }
 
     public void setCategory(String category) {
-        List<String> categories = Arrays.asList("meat","dairy","eggs","fruit","vegetables","herbs");
+        List<String> categories = Arrays.asList("meat","dairy","eggs","fruit","vegetables","herbs","bread");
         if (categories.contains(category.toLowerCase()))
             this.category = category;else
                 throw new IllegalArgumentException(category + " is invalid, cjppse from " + categories);
